@@ -1,0 +1,208 @@
+	create a movie
+
+# mutation create{
+#   createmovie(name: "sairat", actorname: "akash",rating: 8, realeasedate: "2012-12-12", type: "action"){
+# 		movie{
+#       id
+#       name
+#       actorname
+#       rating
+#       type
+#       realeasedate
+#     }
+#   }
+# }
+				OUTPUT
+
+{
+  "data": {
+    "createmovie": {
+      "movie": {
+        "id": "17",
+        "name": "sairat",
+        "actorname": "akash",
+        "rating": "8",
+        "type": "action",
+        "realeasedate": "2012-12-12"
+      }
+    }
+  }
+}
+
+
+	search movie by id
+
+
+# query{
+#   movieById(id:3){
+#   	id
+#   	name
+#     actorname
+#     rating
+#     type
+#     realeasedate
+#   }
+# }
+
+				OUTPUT
+{
+  "data": {
+    "movieById": [
+      {
+        "id": "3",
+        "name": "sultan",
+        "actorname": "salman khan",
+        "rating": "6",
+        "type": "action",
+        "realeasedate": "2015-02-02"
+      }
+    ]
+  }
+}
+
+		show all movie
+
+query showall{
+  allMovie{
+    id
+    name
+    actorname
+    rating
+    type
+    realeasedate
+  }
+}
+
+				OUTPUT
+{
+  "data": {
+    "allMovie": [
+      {
+        "id": "3",
+        "name": "sultan",
+        "actorname": "salman khan",
+        "rating": "6",
+        "type": "action",
+        "realeasedate": "2015-02-02"
+      },
+      {
+        "id": "4",
+        "name": "pk",
+        "actorname": "amir khan",
+        "rating": "6",
+        "type": "comedy",
+        "realeasedate": "2014-01-01"
+      },
+      {
+        "id": "17",
+        "name": "sairat",
+        "actorname": "akash",
+        "rating": "8",
+        "type": "action",
+        "realeasedate": "2012-12-12"
+      }
+    ]
+  }
+}
+         		update movie
+
+
+mutation update{
+  updatemovie(id:17,name:"dangal",actorname:"amir khan",rating:4,realeasedate:"2014-08-08",type:"action"){
+    movie{
+      id
+      name
+      actorname
+      rating
+      type
+      realeasedate
+    }
+  }
+}			
+
+
+			OUTPUT
+
+{
+  "data": {
+    "updatemovie": {
+      "movie": {
+        "id": "17",
+        "name": "dangal",
+        "actorname": "amir khan",
+        "rating": "4",
+        "type": "action",
+        "realeasedate": "2014-08-08"
+      }
+    }
+  }
+}
+
+
+		delete movie by id
+	
+
+# mutation delete{
+#   deletemovie(id:17){
+#     movie{
+#     id
+#     name
+#     actorname
+#     rating
+#     type
+#     realeasedate
+#     }
+#   }
+# }
+		OUTPUT
+
+{
+  "data": {
+    "deletemovie": null
+  }
+}
+
+
+
+
+
+
+		remainig data
+
+query showall{
+  allMovie{
+    id
+    name
+    actorname
+    rating
+    type
+    realeasedate
+  }
+}
+
+
+		OUTPUT
+
+
+{
+  "data": {
+    "allMovie": [
+      {
+        "id": "3",
+        "name": "sultan",
+        "actorname": "salman khan",
+        "rating": "6",
+        "type": "action",
+        "realeasedate": "2015-02-02"
+      },
+      {
+        "id": "4",
+        "name": "pk",
+        "actorname": "amir khan",
+        "rating": "6",
+        "type": "comedy",
+        "realeasedate": "2014-01-01"
+      }
+    ]
+  }
+}
